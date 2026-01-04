@@ -40,11 +40,11 @@ RUN set -x \
 
 # Copy the entry point file
 COPY --chown=${USER}:${USER} scripts/entry.sh /server/scripts/entry.sh
-RUN chmod 550 /server/scripts/entry.sh
+RUN dos2unix /server/scripts/entry.sh && chmod 550 /server/scripts/entry.sh
 
 # Copy searchfolder file
 COPY --chown=${USER}:${USER} scripts/search_folder.sh /server/scripts/search_folder.sh
-RUN chmod 550 /server/scripts/search_folder.sh
+RUN dos2unix /server/scripts/search_folder.sh && chmod 550 /server/scripts/search_folder.sh
 
 # Create required folders to keep their permissions on mount
 RUN mkdir -p "${HOMEDIR}/Zomboid"
