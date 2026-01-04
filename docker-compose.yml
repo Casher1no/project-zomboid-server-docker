@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  ProjectZomboidDedicatedServer:
+  zomboid-server:
     image: danixu86/project-zomboid-dedicated-server:latest
     restart: unless-stopped
     build:
